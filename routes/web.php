@@ -10,4 +10,8 @@ Route::get('/', function () {
 
 Route::post('/submit',[FormularioController::class,'submit']);
 
+Route::get('envia-email', function(){
+    
+});
+
 ?>

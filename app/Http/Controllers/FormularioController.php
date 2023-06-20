@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Mail\classeEmail;
+use Illuminate\Support\Facades\Mail;
 class FormularioController extends Controller
 {
 
@@ -12,7 +13,9 @@ class FormularioController extends Controller
 
         $email = $requisicao->input('email');
         
-        return "feito";
+        
+        //return new \App\Mail\classeEmail($email);
+        Illuminate\Support\Facades\Mail::send(new \App\Mail\classeEmail($email));
     }
 }
 
