@@ -15,7 +15,7 @@ class FormularioController extends Controller
         
         
         //return new \App\Mail\classeEmail($email);
-        Illuminate\Support\Facades\Mail::send(new \App\Mail\classeEmail($email));
+        \Illuminate\Support\Facades\Mail::send(new \App\Mail\classeEmail($email));
     }
 }
 
