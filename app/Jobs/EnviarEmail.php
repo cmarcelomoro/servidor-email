@@ -12,15 +12,15 @@ use Illuminate\Queue\SerializesModels;
 class EnviarEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
+    private $email;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($email)
     {
-        //
+        $this->email = $email;
     }
 
     /**
@@ -30,6 +30,6 @@ class EnviarEmail implements ShouldQueue
      */
     public function handle()
     {
-        //
+        \Illuminate\Support\Facades\Mail::send(new \App\Mail\classeEmail($this->email));
     }
 }
